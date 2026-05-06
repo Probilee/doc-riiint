@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Times New Roman", Times, serif;
+  --font-mono: "Courier New", Courier, monospace;
+}
+
+@layer base {
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+}
+
+@layer utilities {
+  .a4-page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    padding: 20mm;
+    background: white;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  body {
+    background: white !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+  
+  .a4-page {
+    margin: 0;
+    box-shadow: none;
+    page-break-after: always;
+    page-break-inside: avoid;
+  }
+  
+  /* Ensure the last page doesn't have an empty blank page after it usually */
+  .a4-page:last-of-type {
+    page-break-after: auto;
+  }
+
+  /* Reset any body scaling that might interfere with printing */
+  #root {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}

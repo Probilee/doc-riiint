@@ -1,0 +1,6 @@
+{
+  "name": "DocuPrint AI",
+  "description": "Convert images of documents into text-selectable HTML identical to the original, rendered on A4 pages ready for printing as PDF.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
