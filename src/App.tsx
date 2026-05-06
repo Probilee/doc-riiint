@@ -11,7 +11,7 @@ interface DocumentPage {
   error?: string;
 }
 
-const initialHtml = `<div dir="rtl" style="font-family: 'Times New Roman', Times, serif; color: black; max-width: 100%; margin: 0 auto; box-sizing: border-box; border: 2px solid #edaf81; padding: 10px;">
+const htmlPage1 = `<div dir="rtl" style="font-family: 'Times New Roman', Times, serif; color: black; max-width: 100%; margin: 0 auto; box-sizing: border-box; border: 2px solid #edaf81; padding: 10px;">
   <div style="display: flex; justify-content: space-between; border-bottom: 2px solid #edaf81; padding-bottom: 5px; margin-bottom: 10px; font-weight: bold; font-size: 1.1rem;">
     <div>السنة الثانية</div>
     <div style="color: red; font-size: 1.3rem;">المركبة 01 : الحوار</div>
@@ -106,14 +106,159 @@ const initialHtml = `<div dir="rtl" style="font-family: 'Times New Roman', Times
   </div>
 </div>`;
 
+const htmlPage2 = `<div dir="rtl" style="font-family: 'Times New Roman', Times, serif; color: black; max-width: 100%; margin: 0 auto; box-sizing: border-box; border: 1px solid #a6a6a6; padding: 20px; background: white;">
+  <h1 style="color: red; text-align: center; font-size: 1.6rem; font-weight: bold; margin-bottom: 15px;">المخطط السنوي لسير التعلمات تاريخ السنة الثانية</h1>
+
+  <table style="width: 100%; border-collapse: collapse; border: 1px solid #a6a6a6; text-align: center; line-height: 1.4; font-size: 1.1rem;">
+    <thead>
+      <tr>
+        <th style="border: 1px solid #a6a6a6; padding: 5px; width: 8%; color: red;">أسابيع</th>
+        <th style="border: 1px solid #a6a6a6; padding: 5px; width: 10%; color: red;">المقطع</th>
+        <th style="border: 1px solid #a6a6a6; padding: 5px; width: 35%; color: red;">المركبات</th>
+        <th style="border: 1px solid #a6a6a6; padding: 5px; width: 47%; color: red;">سير التعلمات</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Group 1 -->
+      <tr>
+        <td style="border: 1px solid #a6a6a6; padding: 5px; color: red; font-weight: bold;">3</td>
+        <td rowspan="7" style="border: 1px solid #a6a6a6; padding: 10px; background-color: #fce4d6;">
+           <div style="writing-mode: vertical-rl; transform: rotate(180deg); margin: auto; font-weight: bold;">المقطع الأول:الوثائق التاريخية ( 06 ساعات)</div>
+        </td>
+        <td colspan="2" style="border: 1px solid #a6a6a6; padding: 5px; color: red; font-weight: bold;">تقويم تشخيصي</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #a6a6a6; padding: 5px; color: red; font-weight: bold;">4</td>
+        <td rowspan="2" style="border: 1px solid #a6a6a6; padding: 5px; font-weight: bold;">الخطوات المنهجية لدراسة الوثيقة التاريخية</td>
+        <td rowspan="2" style="border: 1px solid #a6a6a6; padding: 5px;">وضعية إنطلاق - تعريف الوثيقة<br>التاريخية - خطوات دراستها</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #a6a6a6; padding: 5px; color: red; font-weight: bold;">5</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #a6a6a6; padding: 5px; color: red; font-weight: bold;">6</td>
+        <td rowspan="2" style="border: 1px solid #a6a6a6; padding: 5px; font-weight: bold;">ميادين تحول المجتمع الإسلامي</td>
+        <td style="border: 1px solid #a6a6a6; padding: 5px;">- دراسة صحيفة المدينة</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #a6a6a6; padding: 5px; color: red; font-weight: bold;">7</td>
+        <td style="border: 1px solid #a6a6a6; padding: 5px;">دولة الرسول ( ص ) في المدينة</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #a6a6a6; padding: 5px; color: red; font-weight: bold;">8</td>
+        <td rowspan="2" style="border: 1px solid #a6a6a6; padding: 5px; font-weight: bold;">التطور الحضاري للدولة الإسلامية</td>
+        <td style="border: 1px solid #a6a6a6; padding: 5px;">التطور السياسي-التطور الإقتصادي</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #a6a6a6; padding: 5px; color: red; font-weight: bold;">9</td>
+        <td style="border: 1px solid #a6a6a6; padding: 5px;">التطور الثقافي – التطور العسكري</td>
+      </tr>
+
+      <!-- Group 2 -->
+      <tr>
+        <td style="border: 1px solid #a6a6a6; padding: 5px; color: red; font-weight: bold;">10</td>
+        <td rowspan="9" style="border: 1px solid #a6a6a6; padding: 10px; background-color: #e2efda;">
+           <div style="writing-mode: vertical-rl; transform: rotate(180deg); margin: auto; font-weight: bold;">المقطع الثاني : التاريخ الوطني ( 14 ساعة )</div>
+        </td>
+        <td colspan="2" style="border: 1px solid #a6a6a6; padding: 5px; color: red; font-weight: bold;">إدماج كلي</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #a6a6a6; padding: 5px; color: red; font-weight: bold;">11</td>
+        <td rowspan="2" style="border: 1px solid #a6a6a6; padding: 5px; font-weight: bold;">تحول شمال إفريقيا إلى المغرب الإسلامي</td>
+        <td style="border: 1px solid #a6a6a6; padding: 5px;">وضعية إنطلاق - موقع بلاد المغرب<br>- مراحل الفتح الإسلامي</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #a6a6a6; padding: 5px; color: red; font-weight: bold;">12</td>
+        <td style="border: 1px solid #a6a6a6; padding: 5px;">- نتائج الفتح الإسلامي لبلاد المغرب<br>- فتح الاندلس</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #a6a6a6; padding: 5px; color: red; font-weight: bold;">13</td>
+        <td colspan="2" style="border: 1px solid #a6a6a6; padding: 5px; color: red; font-weight: bold;">تقويم فصلي</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #a6a6a6; padding: 5px; color: red; font-weight: bold;">14</td>
+        <td style="border: 1px solid #a6a6a6; padding: 5px; font-weight: bold;">الدول الإسلامية في الجزائروالمغرب الإسلامي</td>
+        <td style="border: 1px solid #a6a6a6; padding: 5px;">الدولة الأغلبية - الدولة الرستمية -<br>الدولة الإدريسية</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #a6a6a6; padding: 5px;"></td>
+        <td colspan="2" style="border: 1px solid #a6a6a6; padding: 5px; color: red; font-weight: bold;">إستراحة بيداغوجية</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #a6a6a6; padding: 5px; color: red; font-weight: bold;">15</td>
+        <td style="border: 1px solid #a6a6a6; padding: 5px; font-weight: bold;">الدول الإسلامية في الجزائروالمغرب الإسلامي</td>
+        <td style="border: 1px solid #a6a6a6; padding: 5px;">- الدولة المرابطية - الدولة الموحدية</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #a6a6a6; padding: 5px; color: red; font-weight: bold;">16</td>
+        <td rowspan="2" style="border: 1px solid #a6a6a6; padding: 5px; font-weight: bold;">إنعكاسات تراجع السيادة على الأندلس</td>
+        <td style="border: 1px solid #a6a6a6; padding: 5px;">المغرب الإسلامي ما بعد الموحدين</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #a6a6a6; padding: 5px; color: red; font-weight: bold;">17</td>
+        <td style="border: 1px solid #a6a6a6; padding: 5px;">- نتائج سقوط الأندلس</td>
+      </tr>
+
+      <!-- Group 3 -->
+      <tr>
+        <td style="border: 1px solid #a6a6a6; padding: 5px; color: red; font-weight: bold;">18</td>
+        <td rowspan="6" style="border: 1px solid #a6a6a6; padding: 10px; background-color: #00b0f0;">
+           <div style="writing-mode: vertical-rl; transform: rotate(180deg); margin: auto; font-weight: bold;">المقطع الثالث : التاريخ العام( 06 ساعات)</div>
+        </td>
+        <td colspan="2" style="border: 1px solid #a6a6a6; padding: 5px; color: red; font-weight: bold;">إدماج كلي</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #a6a6a6; padding: 5px; color: red; font-weight: bold;">19</td>
+        <td style="border: 1px solid #a6a6a6; padding: 5px; font-weight: bold;">الفتوحات الإسلامية في الشرق و الغرب</td>
+        <td style="border: 1px solid #a6a6a6; padding: 5px;">الإمتداد الزماني - الإمتداد المكاني</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #a6a6a6; padding: 5px; color: red; font-weight: bold;">20</td>
+        <td style="border: 1px solid #a6a6a6; padding: 5px; font-weight: bold;">مظاهر الحضارة الإسلامية</td>
+        <td style="border: 1px solid #a6a6a6; padding: 5px;">المشرق – المغرب - الأندلس</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #a6a6a6; padding: 5px;"></td>
+        <td colspan="2" style="border: 1px solid #a6a6a6; padding: 5px; color: red; font-weight: bold;">إستراحة بيداغوجية</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #a6a6a6; padding: 5px; color: red; font-weight: bold;">21</td>
+        <td style="border: 1px solid #a6a6a6; padding: 5px; font-weight: bold;">مظاهر تأثير الحضارة الإسلامية</td>
+        <td style="border: 1px solid #a6a6a6; padding: 5px;">المظهر العمراني – المظهر الفني</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #a6a6a6; padding: 5px; color: red; font-weight: bold;">22</td>
+        <td colspan="2" style="border: 1px solid #a6a6a6; padding: 5px; color: red; font-weight: bold;">إدماج كلي</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Footer Graphic -->
+  <div style="text-align: center; margin-top: 15px; font-size: 0.9rem; position: relative;">
+     <svg width="40" height="40" viewBox="0 0 100 100" style="position: absolute; left: 50%; transform: translateX(-50%); top: -15px; z-index: -1;">
+        <path fill="none" stroke="#ccc" stroke-width="2" d="M50 5 L55 15 L65 10 L65 20 L77 20 L72 30 L82 35 L75 42 L85 50 L75 58 L82 65 L72 70 L77 80 L65 80 L65 90 L55 85 L50 95 L45 85 L35 90 L35 80 L23 80 L28 70 L18 65 L25 58 L15 50 L25 42 L18 35 L28 30 L23 20 L35 20 L35 10 L45 15 Z"/>
+     </svg>
+     <span style="position: relative; z-index: 1;">3</span>
+  </div>
+</div>`;
+
 export default function App() {
-  const [pages, setPages] = useState<DocumentPage[]>([{
-    id: 'demo-arabic-page',
-    imageDataUrl: '',
-    mimeType: 'image/jpeg',
-    status: 'complete',
-    html: initialHtml
-  }]);
+  const [pages, setPages] = useState<DocumentPage[]>([
+    {
+      id: 'demo-arabic-page-1',
+      imageDataUrl: '',
+      mimeType: 'image/jpeg',
+      status: 'complete',
+      html: htmlPage1
+    },
+    {
+      id: 'demo-arabic-page-2',
+      imageDataUrl: '',
+      mimeType: 'image/jpeg',
+      status: 'complete',
+      html: htmlPage2
+    }
+  ]);
   const [isDragging, setIsDragging] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
