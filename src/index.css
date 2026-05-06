@@ -16,7 +16,7 @@
 @layer utilities {
   .a4-page {
     width: 210mm;
-    min-height: 297mm;
+    height: 297mm; /* Fixed height for strictly A4 */
     margin: 0 auto;
     padding: 20mm;
     background: white;
@@ -33,8 +33,12 @@
     margin: 0;
   }
 
-  body {
+  html, body {
+    width: 210mm;
+    height: 297mm;
     background: white !important;
+    margin: 0;
+    padding: 0;
   }
 
   .no-print {
@@ -42,15 +46,19 @@
   }
   
   .a4-page {
+    width: 210mm;
+    height: 297mm;
     margin: 0;
+    padding: 20mm;
     box-shadow: none;
+    page-break-before: always;
     page-break-after: always;
     page-break-inside: avoid;
+    overflow: hidden;
   }
   
-  /* Ensure the last page doesn't have an empty blank page after it usually */
-  .a4-page:last-of-type {
-    page-break-after: auto;
+  .a4-page:first-of-type {
+    page-break-before: avoid;
   }
 
   /* Reset any body scaling that might interfere with printing */
