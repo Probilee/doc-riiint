@@ -379,7 +379,7 @@ export default function App() {
         </div>
       </div>
 
-      <main className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+      <main className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 print:p-0 print:m-0 print:max-w-none">
         
         {pages.length === 0 ? (
           <div 
@@ -402,9 +402,9 @@ export default function App() {
             </p>
           </div>
         ) : (
-          <div className="space-y-12">
+          <div className="space-y-12 print:space-y-0 print:m-0 print:p-0">
             {pages.map((page, index) => (
-              <div key={page.id} className="relative group">
+              <div key={page.id} className="relative group print:m-0 print:p-0">
                 <div className="no-print flex justify-between items-center mb-3">
                   <h2 className="text-sm font-semibold text-gray-500 tracking-wider uppercase">Page {index + 1}</h2>
                   <button 

@@ -18,7 +18,7 @@
     width: 210mm;
     height: 297mm; /* Fixed height for strictly A4 */
     margin: 0 auto;
-    padding: 20mm;
+    padding: 10mm;
     background: white;
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
     box-sizing: border-box;
@@ -34,11 +34,9 @@
   }
 
   html, body {
-    width: 210mm;
-    height: 297mm;
     background: white !important;
-    margin: 0;
-    padding: 0;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
   .no-print {
@@ -48,23 +46,25 @@
   .a4-page {
     width: 210mm;
     height: 297mm;
-    margin: 0;
-    padding: 20mm;
-    box-shadow: none;
-    page-break-before: always;
+    margin: 0 !important;
+    padding: 10mm !important;
+    box-shadow: none !important;
+    border: none !important;
     page-break-after: always;
     page-break-inside: avoid;
-    overflow: hidden;
+    overflow: hidden !important;
   }
   
-  .a4-page:first-of-type {
-    page-break-before: avoid;
+  /* Ensure the last page doesn't have an empty blank page after it */
+  .a4-page:last-of-type {
+    page-break-after: auto;
   }
 
   /* Reset any body scaling that might interfere with printing */
   #root {
-    width: 100%;
-    margin: 0;
-    padding: 0;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 }
+
