@@ -1,9 +1,19 @@
 import { GoogleGenAI } from '@google/genai';
 
-// Initialize the API client
-// The API key is securely injected by AI Studio at runtime
-// via Vite's define configuration.
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+let ai: GoogleGenAI | null = null;
+
+function getAIClient() {
+  if (!ai) {
+    // Check process.env.GEMINI_API_KEY (AI Studio) or import.meta.env.VITE_GEMINI_API_KEY
+    const apiKey = (typeof process !== 'undefined' && process.env && process.env.GEMINI_API_KEY)
+      || import.meta.env.VITE_GEMINI_API_KEY;
+
+    if (apiKey && apiKey !== 'undefined' && apiKey !== 'null') {
+      ai = new GoogleGenAI({ apiKey });
+    }
+  }
+  return ai;
+}
 
 export async function convertImageToHtml(base64Image: string, mimeType: string): Promise<string> {
   const prompt = `
@@ -28,7 +38,25 @@ Follow these strict guidelines:
     // Strip the "data:image/...;base64," part if it exists
     const base64Data = base64Image.split(',')[1] || base64Image;
 
-    const response = await ai.models.generateContent({
+    const client = getAIClient();
+    
+    if (!client) {
+      // Return a simulated mock response if no API key is available
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      return `<div style="font-family: 'Helvetica Neue', Arial, sans-serif; color: black; max-width: 100%; margin: 0 auto; box-sizing: border-box; border: 1px dashed #ccc; padding: 40px; background: white; text-align: center;">
+        <h1 style="color: #2563eb; font-size: 1.8rem; font-weight: bold; margin-bottom: 20px;">Image Processing Simulator</h1>
+        <p style="font-size: 1.1rem; color: #4b5563; margin-bottom: 20px; line-height: 1.5;">
+          No Gemini API Key was found in the environment variables. 
+          <br/><br/>
+          In a production environment with an API Key, the AI would transcribe the following image into perfect HTML/CSS. For now, you are seeing this mock placeholder so you can test the layout and printing.
+        </p>
+        <div style="display: inline-block; padding: 4px; border: 2px solid #e5e7eb; border-radius: 8px; background: #f9fafb;">
+          <img src="${base64Image}" style="max-width: 100%; max-height: 400px; display: block;" alt="Uploaded preview" />
+        </div>
+      </div>`;
+    }
+
+    const response = await client.models.generateContent({
       model: 'gemini-2.5-pro',
       contents: [
         {
